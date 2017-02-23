@@ -8,4 +8,11 @@ LABEL version="0.1"
 
 USER root
 
-RUN pip install git+https://github.com/mcapuccini/luigi.git@feature/k8s-task
+# Install Luigi
+RUN pip install \
+  git+https://github.com/mcapuccini/luigi.git@feature/k8s-task
+  pykube
+
+# Configure Luigi
+RUN mkdir /etc/luigi
+RUN echo -e "[kubernetes]\nauth_method=service-account" > /etc/luigi/client.cfg
