@@ -3,8 +3,8 @@ MAINTAINER PhenoMeNal-H2020 Project <phenomenal-h2020-users@googlegroups.com>
 
 LABEL Description="Custom Jupyter stack for PhenoMeNal."
 LABEL software="Jupyter"
-LABEL software.version=""
-LABEL version="0.1"
+LABEL software.version="1.0.0"
+LABEL version="0.2"
 
 # Add cran R backport
 RUN echo "deb http://cloud.r-project.org/bin/linux/debian jessie-cran3/" >> /etc/apt/sources.list && \
