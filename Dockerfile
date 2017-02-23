@@ -10,7 +10,7 @@ USER root
 
 # Install Luigi
 RUN pip install \
-  git+https://github.com/mcapuccini/luigi.git@feature/k8s-task
+  git+https://github.com/mcapuccini/luigi.git@feature/k8s-task \
   pykube
 
 # Configure Luigi
