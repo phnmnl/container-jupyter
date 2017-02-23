@@ -15,4 +15,5 @@ RUN pip install \
 
 # Configure Luigi
 RUN mkdir /etc/luigi
-RUN echo -e "[kubernetes]\nauth_method=service-account" > /etc/luigi/client.cfg
+RUN echo "[kubernetes]" > /etc/luigi/client.cfg
+RUN echo "auth_method=service-account" >> /etc/luigi/client.cfg
