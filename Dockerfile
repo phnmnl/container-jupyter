@@ -35,8 +35,8 @@ RUN apt-get -y update && apt-get -y install --no-install-recommends \
     $CONDA_DIR/envs/python2/bin/python -m ipykernel install && \
     kernda -o -y /usr/local/share/jupyter/kernels/python2/kernel.json && \
     pip uninstall kernda -y && \
-    pip install git+https://github.com/mcapuccini/luigi.git@feature/k8s-task#egg=luigi pykube jupyter && \
-    pip uninstall -y pip && apt-get -y purge gcc libfreetype6-dev libpng-dev pkg-config python-pip python-dev && \ 
+    pip install git+https://github.com/spotify/luigi.git#egg=luigi pykube jupyter && \
+    pip uninstall -y pip && apt-get -y purge gcc libfreetype6-dev libpng-dev pkg-config python-pip python-dev && \
     apt-get -y autoremove && rm -rf /var/lib/{cache,log}/ /tmp/* /var/tmp/*
 
 # Configure Luigi
