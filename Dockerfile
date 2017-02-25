@@ -41,4 +41,5 @@ RUN apt-get -y update && apt-get -y install --no-install-recommends \
 
 # Configure Luigi
 RUN mkdir /etc/luigi
-RUN echo -e "[kubernetes]\nauth_method=service-account" > /etc/luigi/client.cfg
+RUN echo "[kubernetes]" > /etc/luigi/client.cf && \
+    echo "auth_method=service-account" >> /etc/luigi/client.cfg
