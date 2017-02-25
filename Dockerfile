@@ -21,25 +21,15 @@ RUN apt-get -y update && apt-get -y install --no-install-recommends \
     apt-transport-https git gcc pkg-config python-dev python-pip libav-tools \
     r-cran-ggplot2 r-base=3.3.2-1~jessiecran.0 r-cran-lattice && \
     conda install --quiet --yes \
-    'ipywidgets=5.2*' \
-    'pandas=0.19*' \
-    'numexpr=2.6*' \
-    'matplotlib=1.5*' \
-    'scipy=0.17*' && \
-    conda remove --quiet --yes --force qt pyqt && \
+    'ipywidgets=5.2*' && \
     conda clean -tipsy && \
     jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
     conda create --quiet --yes -p $CONDA_DIR/envs/python2 python=2.7 \
     'ipython=4.2*' \
-    'ipywidgets=5.2*' \
-    'pandas=0.19*' \
-    'matplotlib=1.5*' \
-    'scipy=0.17*' && \
-    conda remove -n python2 --quiet --yes --force qt pyqt && \
+    'ipywidgets=5.2*' && \
     conda clean -tipsy && \
     ln -s $CONDA_DIR/envs/python2/bin/pip $CONDA_DIR/bin/pip2 && \
     ln -s $CONDA_DIR/bin/pip $CONDA_DIR/bin/pip3 && \
-    MPLBACKEND=Agg $CONDA_DIR/envs/python2/bin/python -c "import matplotlib.pyplot" && \
     pip install --upgrade pip && \
     pip install kernda --no-cache && \
     $CONDA_DIR/envs/python2/bin/python -m ipykernel install && \
