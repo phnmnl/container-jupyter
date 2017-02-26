@@ -18,8 +18,21 @@ RUN echo "deb http://cloud.r-project.org/bin/linux/debian jessie-cran3/" >> /etc
 
 # Install
 RUN apt-get -y update && apt-get -y install --no-install-recommends \
-    apt-transport-https git gcc pkg-config python-dev python-pip libav-tools \
-    r-cran-ggplot2 r-base=3.3.2-1~jessiecran.0 r-cran-lattice && \
+    apt-transport-https git gcc pkg-config python-dev python-pip libav-tools && \
+    conda config --add channels r && \
+    conda install --quiet --yes \
+    'r-base=3.3.2' \
+    'r-irkernel=0.7*' \
+    'r-plyr=1.8*' \
+    'r-ggplot2=2.2*' \
+    'r-lattice=0.20*' \
+    'r-data.table=1.10*' \
+    'r-shiny=0.14*' \
+    'r-rmarkdown=1.2*' \
+    'r-reshape2=1.4*' \
+    'r-caret=6.0*' \
+    'r-rcurl=1.95*' && \
+    conda clean -tipsy && \
     conda install --quiet --yes \
     'ipywidgets=5.2*' && \
     conda clean -tipsy && \
