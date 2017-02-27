@@ -1,0 +1,5 @@
+which jupyter
+which generate-jupyter-hashed-password.sh
+which R
+which python
+which python3
