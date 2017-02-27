@@ -56,3 +56,7 @@ RUN apt-get -y update && apt-get -y install --no-install-recommends \
 RUN mkdir /etc/luigi
 RUN echo "[kubernetes]" > /etc/luigi/client.cfg && \
     echo "auth_method=service-account" >> /etc/luigi/client.cfg
+
+# Add password hash generation logic
+COPY generate-jupyter-hashed-password.sh /usr/local/bin/
+RUN chmod u+x /usr/local/bin/generate-jupyter-hashed-password.sh
