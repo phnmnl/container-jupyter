@@ -18,7 +18,7 @@ RUN echo "deb http://cloud.r-project.org/bin/linux/debian jessie-cran3/" >> /etc
 
 # Install
 RUN apt-get -y update && apt-get -y install --no-install-recommends \
-    apt-transport-https git gcc pkg-config python-dev python-pip libav-tools && \
+    apt-transport-https git gcc pkg-config python-dev python-pip libav-tools libxrender1 fonts-dejavu && \
     conda config --add channels r && \
     conda install --quiet --yes \
     'r-base=3.3.2' \
@@ -31,6 +31,7 @@ RUN apt-get -y update && apt-get -y install --no-install-recommends \
     'r-rmarkdown=1.2*' \
     'r-reshape2=1.4*' \
     'r-caret=6.0*' \
+    'r-cairo=1.5_9' \
     'r-rcurl=1.95*' && \
     conda clean -tipsy && \
     conda install --quiet --yes \
