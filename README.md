@@ -38,3 +38,5 @@ Light-weight variation of Jupyter docker stack, starts from base-notebook, but m
 ## Usage Instructions
 
 This will be deployed in your PhenoMeNal VRE, and accesible through a URL that will be provided to you.
+
+## Publications
