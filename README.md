@@ -7,7 +7,8 @@ Light-weight variation of Jupyter docker stack, starts from base-notebook.
 
 ## Description
 
-Light-weight variation of Jupyter docker stack, starts from base-notebook, but much lighter than data-stack, minimal-notebook, and r-notebook. Still providesJupyter notebook password secured, with R, Python2 and Python3 kernels as well as Luigi support. This is not really a tool on itself, but a runtime environment.
+
+Light-weight variation of Jupyter docker stack. Starts from base-notebook, but much lighter than data-stack, minimal-notebook, and r-notebook. Still provides password secures Jupyter notebook, with R, Python2 and Python3 kernels as well as Luigi support. This is not really a tool on itself, but a runtime environment.
 
 ## Key features
 
